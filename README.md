@@ -1,5 +1,5 @@
 # imgzips
 
-Run
+Run for local developement
 
 ### `npm run dev`
