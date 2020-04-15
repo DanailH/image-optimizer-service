@@ -53,17 +53,23 @@ router.get('/optimize', (req, res) => {
         ]
       });
 
-      console.log(files);
+      res.sendFile(imageName, options, function (err) {
+        if (err) {
+          console.log(err)
+        } else {
+          console.log('Sent:', imageName)
+        }
+      });
+    });
+  } else {
+    res.sendFile(imageName, options, function (err) {
+      if (err) {
+        console.log(err)
+      } else {
+        console.log('Sent:', imageName)
+      }
     });
   }
-
-  res.sendFile(imageName, options, function (err) {
-    if (err) {
-      console.log(err)
-    } else {
-      console.log('Sent:', imageName)
-    }
-  });
 });
 
 module.exports = router;
